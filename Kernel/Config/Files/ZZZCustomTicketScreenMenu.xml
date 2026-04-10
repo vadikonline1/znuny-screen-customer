@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="2.0" init="Config">
+    <Setting Name="Frontend::NavigationModule###CustomTicketScreen" Required="0" Valid="1">
+        <Description Translatable="1">Custom ticket creation screen navigation module.</Description>
+        <Navigation>Frontend::Agent::View::Navigation</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="Group">ticket</Item>
+                <Item Key="Block">ItemArea</Item>
+                <Item Key="Description" Translatable="1">Create Custom Ticket</Item>
+                <Item Key="Image">new-ticket.png</Item>
+                <Item Key="Link">AgentTicketCustomScreen</Item>
+                <Item Key="Name" Translatable="1">Custom Ticket</Item>
+                <Item Key="NavBarName" Translatable="1">Ticket</Item>
+                <Item Key="Priority">300</Item>
+                <Item Key="Active">1</Item>
+            </Hash>
+        </Value>
+    </Setting>
+</otrs_config>
