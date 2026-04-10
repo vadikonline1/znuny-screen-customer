@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_package version="1.0">
+    <Name>Znuny4OTRS-YourCustomScreen</Name>
+    <Version>1.0.0</Version>
+    <Framework>6.0.x</Framework>
+    <Vendor>Your Name</Vendor>
+    <URL>https://your-website.com</URL>
+    <License>GNU GENERAL PUBLIC LICENSE Version 3</License>
+    <Description Lang="en">Provides a custom ticket creation screen with own SysConfig settings.</Description>
+    <Description Lang="ro">Oferă un ecran custom de creare tichete cu propriile setări SysConfig.</Description>
+    
+    <Filelist>
+        <File Permission="644" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
+        <File Permission="644" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
+        <File Permission="644" Location="doc/en/admin/Znuny4OTRS-YourCustomScreen.xml" />
+    </Filelist>
+    
+    <CodeInstall>
+        <File Type="Install" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
+        <File Type="Install" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
+        <File Type="Install" Location="doc/en/admin/Znuny4OTRS-YourCustomScreen.xml" />
+    </CodeInstall>
+</otrs_package>
