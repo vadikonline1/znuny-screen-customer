@@ -3,6 +3,7 @@
     <Name>Znuny4OTRS-YourCustomScreen</Name>
     <Version>1.0.0</Version>
     <Framework>6.0.x</Framework>
+    <Framework>7.0.x</Framework>
     <Vendor>Your Name</Vendor>
     <URL>https://your-website.com</URL>
     <License>GNU GENERAL PUBLIC LICENSE Version 3</License>
@@ -12,12 +13,16 @@
     <Filelist>
         <File Permission="644" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
         <File Permission="644" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
-        <File Permission="644" Location="doc/en/admin/Znuny4OTRS-YourCustomScreen.xml" />
+        <File Permission="644" Location="Kernel/Config/Files/ZZZCustomTicketScreenMenu.xml" />
     </Filelist>
     
     <CodeInstall>
         <File Type="Install" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
         <File Type="Install" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
-        <File Type="Install" Location="doc/en/admin/Znuny4OTRS-YourCustomScreen.xml" />
+        <File Type="Install" Location="Kernel/Config/Files/ZZZCustomTicketScreenMenu.xml" />
     </CodeInstall>
+    
+    <CodeUpgrade>
+        <File Type="Install" Location="Kernel/Config/Files/ZZZCustomTicketScreenMenu.xml" />
+    </CodeUpgrade>
 </otrs_package>
