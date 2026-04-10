@@ -1,4 +1,4 @@
-package Kernel::Modules::CustomerTicketCreateInternal;
+package Kernel::Modules::TicketCreateGeneric;
 
 use strict;
 use warnings;
@@ -6,9 +6,12 @@ use warnings;
 sub Run {
     my ($Self, %Param) = @_;
 
-    my %GetParam;
+    my $ConfigName = $Self->{ParamObject}->GetParam( Param => 'Config' ) || 'Default';
 
-    # Formular submit
+    my $ConfigAll = $Self->{ConfigObject}->Get('TicketCreateGeneric') || {};
+    my $Config = $ConfigAll->{$ConfigName} || {};
+
+    # Submit form
     if ( $Self->{ParamObject}->GetParam( Param => 'FormSubmit' ) ) {
 
         my $Title = $Self->{ParamObject}->GetParam( Param => 'Title' ) || '';
@@ -16,25 +19,28 @@ sub Run {
 
         my $TicketID = $Self->{TicketObject}->TicketCreate(
             Title        => $Title,
-            Queue        => 'Raw',  # sau intern queue
-            Lock         => 'unlock',
-            Priority     => '3 normal',
+            Queue        => $Config->{Queue} || 'Raw',
             State        => 'new',
+            Priority     => $Config->{Priority} || '3 normal',
             CustomerUser => $Self->{UserLogin},
-            OwnerID      => 1,
             UserID       => 1,
         );
 
         return $Self->{LayoutObject}->Redirect(
-            OP => "Action=CustomerTicketZoom;TicketID=$TicketID",
+            OP => "Action=AgentTicketZoom;TicketID=$TicketID",
         );
     }
 
     my $Output = $Self->{LayoutObject}->Header();
+
     $Output .= $Self->{LayoutObject}->Output(
-        TemplateFile => 'CustomerTicketCreateInternal',
-        Data         => {},
+        TemplateFile => 'TicketCreateGeneric',
+        Data => {
+            ConfigName => $ConfigName,
+            Title      => $Config->{Title} || 'Ticket Create',
+        },
     );
+
     $Output .= $Self->{LayoutObject}->Footer();
 
     return $Output;
