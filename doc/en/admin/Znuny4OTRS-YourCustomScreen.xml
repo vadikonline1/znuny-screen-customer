@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_config version="1.0" init="Application">
+    <ConfigItem Name="Ticket::Frontend::AgentTicketCustomScreen###DefaultState" Required="0" Valid="1">
+        <Description Translatable="1">Default state for new tickets in custom screen.</Description>
+        <Group>Ticket</Group>
+        <SubGroup>Frontend::Agent::Ticket::ViewCustomScreen</SubGroup>
+        <Setting>
+            <HashRegex />
+            <StringRegex>.*</StringRegex>
+        </Setting>
+        <Value><String>new</String></Value>
+    </ConfigItem>
+    
+    <ConfigItem Name="Ticket::Frontend::AgentTicketCustomScreen###DefaultPriority" Required="0" Valid="1">
+        <Description Translatable="1">Default priority for new tickets in custom screen.</Description>
+        <Group>Ticket</Group>
+        <SubGroup>Frontend::Agent::Ticket::ViewCustomScreen</SubGroup>
+        <Setting>
+            <HashRegex />
+            <StringRegex>.*</StringRegex>
+        </Setting>
+        <Value><String>3 normal</String></Value>
+    </ConfigItem>
+    
+    <ConfigItem Name="Ticket::Frontend::AgentTicketCustomScreen###DefaultQueue" Required="0" Valid="1">
+        <Description Translatable="1">Default queue for new tickets in custom screen.</Description>
+        <Group>Ticket</Group>
+        <SubGroup>Frontend::Agent::Ticket::ViewCustomScreen</SubGroup>
+        <Setting>
+            <HashRegex />
+            <StringRegex>.*</StringRegex>
+        </Setting>
+        <Value><String>Raw</String></Value>
+    </ConfigItem>
+    
+    <ConfigItem Name="Ticket::Frontend::AgentTicketCustomScreen###DynamicField" Required="0" Valid="1">
+        <Description Translatable="1">Dynamic fields configuration for custom ticket screen.</Description>
+        <Group>Ticket</Group>
+        <SubGroup>Frontend::Agent::Ticket::ViewCustomScreen</SubGroup>
+        <Setting>
+            <Hash>
+                <Item>
+                    <Key><String>DynamicFieldName1</String></Key>
+                    <Value><String>1</String></Value>
+                </Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
+    
+    <ConfigItem Name="Ticket::Frontend::AgentTicketCustomScreen###CustomerIDReadOnly" Required="0" Valid="1">
+        <Description Translatable="1">Show CustomerID as read-only field.</Description>
+        <Group>Ticket</Group>
+        <SubGroup>Frontend::Agent::Ticket::ViewCustomScreen</SubGroup>
+        <Setting>
+            <HashRegex />
+            <StringRegex>0|1</StringRegex>
+        </Setting>
+        <Value><String>0</String></Value>
+    </ConfigItem>
+</otrs_config>
