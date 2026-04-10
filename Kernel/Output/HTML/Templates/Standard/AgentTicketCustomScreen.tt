@@ -1,0 +1,21 @@
+# --
+# Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt - custom template
+# Copyright (C) 2024 Your Name
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (GPL). If you
+# did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
+# --
+
+[% RenderBlockStart("Main") %]
+<div class="MainBox ARIARoleMain" id="TicketCustom">
+    <div class="ContentColumn">
+        <h1 class="InvisibleText">[% Translate("Create New Custom Ticket") | html %]</h1>
+        
+        [% INCLUDE "AgentTicketActionCommon.tt"
+            DynamicFieldNames = DynamicFieldNames
+            ConfigPrefix = ConfigPrefix
+        %]
+    </div>
+</div>
+[% RenderBlockStop("Main") %]
