@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
-    <Name>Znuny4OTRS-YourCustomScreen</Name>
+    <Name>Znuny4OTRS-CustomTicketScreen</Name>
     <Version>1.0.0</Version>
     <Framework>6.0.x</Framework>
     <Framework>7.0.x</Framework>
-    <Vendor>Your Name</Vendor>
-    <URL>https://your-website.com</URL>
-    <License>GNU GENERAL PUBLIC LICENSE Version 3</License>
-    <Description Lang="en">Provides a custom ticket creation screen with own SysConfig settings.</Description>
-    <Description Lang="ro">Oferă un ecran custom de creare tichete cu propriile setări SysConfig.</Description>
+    <Vendor>Your Company Name</Vendor>
+    <URL>https://www.your-company.com</URL>
+    <License>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</License>
+    <Description Lang="en">Provides a custom ticket creation screen with independent SysConfig settings. Perfect for separating different ticket types.</Description>
+    <Description Lang="de">Bietet einen benutzerdefinierten Ticket-Erstellungsbildschirm mit unabhängigen SysConfig-Einstellungen.</Description>
+    <Description Lang="ro">Oferă un ecran custom de creare tichete cu propriile setări SysConfig independente. Perfect pentru separarea diferitelor tipuri de tichete.</Description>
     
     <Filelist>
         <File Permission="644" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
         <File Permission="644" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
-        <File Permission="644" Location="Kernel/Config/Files/ZZZCustomTicketScreenMenu.xml" />
+        <File Permission="644" Location="Kernel/Config/Files/ZZZCustomTicketScreen.xml" />
     </Filelist>
     
     <CodeInstall>
         <File Type="Install" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
         <File Type="Install" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
-        <File Type="Install" Location="Kernel/Config/Files/ZZZCustomTicketScreenMenu.xml" />
+        <File Type="Install" Location="Kernel/Config/Files/ZZZCustomTicketScreen.xml" />
     </CodeInstall>
     
     <CodeUpgrade>
-        <File Type="Install" Location="Kernel/Config/Files/ZZZCustomTicketScreenMenu.xml" />
+        <File Type="Install" Location="Kernel/Config/Files/ZZZCustomTicketScreen.xml" />
     </CodeUpgrade>
+    
+    <CodeUninstall>
+        <File Type="Uninstall" Location="Kernel/Modules/AgentTicketCustomScreen.pm" />
+        <File Type="Uninstall" Location="Kernel/Output/HTML/Templates/Standard/AgentTicketCustomScreen.tt" />
+        <File Type="Uninstall" Location="Kernel/Config/Files/ZZZCustomTicketScreen.xml" />
+    </CodeUninstall>
 </otrs_package>
