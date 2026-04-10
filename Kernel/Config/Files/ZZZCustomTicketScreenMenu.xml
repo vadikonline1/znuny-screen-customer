@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_config version="2.0" init="Config">
+    
+    <!-- Default State Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###DefaultState" Required="0" Valid="1">
+        <Description Translatable="1">Default state for new tickets in custom screen.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>new</String></Value>
+    </Setting>
+    
+    <!-- Default Priority Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###DefaultPriority" Required="0" Valid="1">
+        <Description Translatable="1">Default priority for new tickets in custom screen.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>3 normal</String></Value>
+    </Setting>
+    
+    <!-- Default Queue Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###DefaultQueue" Required="0" Valid="1">
+        <Description Translatable="1">Default queue for new tickets in custom screen.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>Raw</String></Value>
+    </Setting>
+    
+    <!-- Owner Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###Owner" Required="0" Valid="1">
+        <Description Translatable="1">Set the owner of a ticket. 0: No, 1: Yes.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>0</String></Value>
+    </Setting>
+    
+    <!-- Responsible Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###Responsible" Required="0" Valid="1">
+        <Description Translatable="1">Set the responsible of a ticket. 0: No, 1: Yes.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>0</String></Value>
+    </Setting>
+    
+    <!-- Customer ID ReadOnly -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###CustomerIDReadOnly" Required="0" Valid="1">
+        <Description Translatable="1">Show CustomerID as read-only field.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>0</String></Value>
+    </Setting>
+    
+    <!-- Service Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###Service" Required="0" Valid="1">
+        <Description Translatable="1">Show service selection.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>0</String></Value>
+    </Setting>
+    
+    <!-- SLA Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###SLA" Required="0" Valid="1">
+        <Description Translatable="1">Show SLA selection.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>0</String></Value>
+    </Setting>
+    
+    <!-- Type Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###Type" Required="0" Valid="1">
+        <Description Translatable="1">Show ticket type selection.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>0</String></Value>
+    </Setting>
+    
+    <!-- Dynamic Fields Configuration -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###DynamicField" Required="0" Valid="1">
+        <Description Translatable="1">Dynamic fields configuration for custom ticket screen. Example: &lt;Item Key="DynamicFieldName" Value="1"/&gt;</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value>
+            <Hash>
+                <!-- Add your dynamic fields here -->
+                <!-- <Item Key="YourDynamicFieldName" Value="1"/> -->
+            </Hash>
+        </Value>
+    </Setting>
+    
+    <!-- Navigation Menu Configuration -->
     <Setting Name="Frontend::NavigationModule###CustomTicketScreen" Required="0" Valid="1">
         <Description Translatable="1">Custom ticket creation screen navigation module.</Description>
         <Navigation>Frontend::Agent::View::Navigation</Navigation>
@@ -17,4 +94,33 @@
             </Hash>
         </Value>
     </Setting>
+    
+    <!-- Show Article Type Selection -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###ArticleType" Required="0" Valid="1">
+        <Description Translatable="1">Show article type selection.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>1</String></Value>
+    </Setting>
+    
+    <!-- Enable Subject Field -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###Subject" Required="0" Valid="1">
+        <Description Translatable="1">Show subject field.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>1</String></Value>
+    </Setting>
+    
+    <!-- Enable Rich Text Editor -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###RichText" Required="0" Valid="1">
+        <Description Translatable="1">Enable rich text editor for the body field.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>1</String></Value>
+    </Setting>
+    
+    <!-- Max File Upload Size -->
+    <Setting Name="Ticket::Frontend::AgentTicketCustomScreen###MaxFileUpload" Required="0" Valid="1">
+        <Description Translatable="1">Maximum file upload size in bytes.</Description>
+        <Navigation>Ticket::Frontend::AgentTicketCustomScreen</Navigation>
+        <Value><String>2097152</String></Value>
+    </Setting>
+    
 </otrs_config>
